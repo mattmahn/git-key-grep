@@ -1,0 +1,26 @@
+# Amazon
+AKIA[0-9A-Z]{16}
+[0-9a-zA-Z/+=]{40}
+# Bitly
+R_[0-9a-f]{32}
+[0-9a-zA-Z_]{5,31}
+# Facebook
+[0-9]{13,17}
+[0-9a-f]{32}
+# Flickr
+[0-9a-f]{16}
+[0-9a-f]{32}
+# Foursquare
+[0-9A-Z]{48}
+# Google
+AIza
+# LinkedIn
+[0-9a-f]{12}
+[0-9a-zA-Z]{16}
+# Mailchimp
+[0-9a-z]{32}(-us[12])?
+# Mailgun
+key-[0-9a-z]{32}
+# Twitter
+[0-9a-zA-Z]{18,25}
+[0-9a-zA-Z]{35,44}
