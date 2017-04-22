@@ -16,4 +16,5 @@ git-key-grep.1: git-key-grep.1.txt
 man: git-key-grep.1
 
 uninstall:
-	rm -v "$(PREFIX)/git-key-grep"
+	rm -v "$(PREFIX)/git-key-grep" "$(MANDIR)/man1/git-key-grep.1" \
+		"$(PREFIX)/regexp"
