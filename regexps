@@ -1,9 +1,9 @@
+# Regular Expressions for git-key-grep
 # Amazon
 AKIA[0-9A-Z]{16}
 [0-9a-zA-Z/+=]{40}
 # Bitly
 R_[0-9a-f]{32}
-[0-9a-zA-Z_]{5,31}
 # Facebook
 [0-9]{13,17}
 [0-9a-f]{32}
