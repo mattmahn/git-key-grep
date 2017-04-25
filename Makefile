@@ -5,6 +5,9 @@ PREFIX ?= "/usr/local/bin"
 
 all: man
 
+clean:
+	rm git-key-grep.1
+
 install: git-key-grep.1 regexp
 	install -vm 0755 "git-key-grep" "$(PREFIX)"
 	install -vm 0644 "git-key-grep.1" "$(MANDIR)/man1"
