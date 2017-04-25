@@ -23,7 +23,7 @@ sudo make install
 
 ### Windows
 
-1. Download `git-key-grep` and `regexp` into a convenient directory.
+1. Download `git-key-grep` and `regexps` into a convenient directory.
 1. Add `git-key-grep` to your `%PATH%`.
 
 
