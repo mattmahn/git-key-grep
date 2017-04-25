@@ -13,19 +13,18 @@ NONGIT_OK=No
 . "$(git --exec-path)/git-sh-setup"   # see git-sh-setup(1)
 
 readonly ERR_GETOPT=1
+readonly ERR_OPTIONS=2
 
 main() {
-    if [[ $# -lt 0 ]]; then
-        usage
-        exit 1
-    fi
-
     grep -vE -e '^[[:space:]]*#' regexps | git grep -E -f -
 }
 
 readonly SHORT_OPT_STR='hV'
 readonly LONG_OPT_STR='help,version'
-TEMP=$(getopt -o $SHORT_OPT_STR --long $LONG_OPT_STR -n 'git-key-grep' -- "$@")
+TEMP=$(getopt -o $SHORT_OPT_STR -l $LONG_OPT_STR -n 'git-key-grep' -- "$@")
+if [[ $? -ne 0 ]]; then
+    exit $ERR_OPTIONS
+fi
 eval set -- "$TEMP"
 unset TEMP
 
@@ -41,6 +40,7 @@ while true; do
             ;;
         '--')
             shift
+            break
             ;;
         *)
             echo "$0 internal error!" >&2

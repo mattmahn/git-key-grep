@@ -32,7 +32,9 @@ EXIT STATUS
 0::
     Success
 1::
-    Error with getopt
+    Error with 'getopt'(1)
+2::
+    Bad arguments
 
 BUGS
 ----
