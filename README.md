@@ -36,6 +36,18 @@ for anything else that needs improvement too.
 The [man page][] is written in [AsciiDoc][], so you may need to install the
 `asciidoc` package to get the `a2x` command used to generate the man page.
 
+### Dev Envrionment
+
+A Dockerfile is available to test git-key-grep, so you don't have to mess up
+your own system. Build it with
+```sh
+docker build -t 'git-key-grep' .
+```
+Then start it with
+```sh
+docker run -it 'git-key-grep'
+```
+
 
 [AsciiDoc]: http://asciidoc.org/
 [man page]: git-key-grep.1.txt
