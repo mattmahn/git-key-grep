@@ -2,6 +2,7 @@
 #
 # Searches a git repository for API keys.
 
+VERSION='0.0.0'
 USAGE=''
 LONG_USAGE=$(cat <<EOM
 Usage: git key-grep
@@ -11,13 +12,46 @@ SUBDIRECTORY_OK=Yes
 NONGIT_OK=No
 . "$(git --exec-path)/git-sh-setup"   # see git-sh-setup(1)
 
+readonly ERR_GETOPT=1
+
 main() {
-  if [ $# -lt 0 ]; then
+  if [[ $# -lt 0 ]]; then
     usage
     exit 1
   fi
 
   grep -vE -e '^[[:space:]]*#' regexps | git grep -E -f -
 }
+
+readonly SHORT_OPT_STR='hV'
+readonly LONG_OPT_STR='help,version'
+TEMP=$(getopt -o $SHORT_OPT_STR --long $LONG_OPT_STR -n 'git-key-grep' -- "$@")
+eval set -- "$TEMP"
+unset TEMP
+
+while true; do
+  case "$1" in
+    '-h'|'--help')
+      usage
+      exit 0
+      ;;
+    '-V'|'--version')
+      echo "$0 v$VERSION"
+      exit 0
+      ;;
+    '--')
+      shift
+      ;;
+    *)
+      echo "$0 internal error!" >&2
+      exit $ERR_GETOPT
+      ;;
+  esac
+done
+
+echo 'Remaining arguments:'
+for arg; do
+  echo "--> '$arg'"
+done
 
 main "$@"

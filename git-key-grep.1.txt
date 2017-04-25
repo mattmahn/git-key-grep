@@ -29,7 +29,10 @@ OPTIONS
 
 EXIT STATUS
 -----------
-`git key-grep` returns with exit status 0 on success.
+0::
+      Success
+1::
+      Error with getopt
 
 BUGS
 ----
