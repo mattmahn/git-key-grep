@@ -4,10 +4,6 @@
 
 VERSION='0.0.0'
 USAGE=''
-LONG_USAGE=$(cat <<EOM
-Usage: git key-grep
-EOM
-)
 SUBDIRECTORY_OK=Yes
 NONGIT_OK=No
 . "$(git --exec-path)/git-sh-setup"   # see git-sh-setup(1)
