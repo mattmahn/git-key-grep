@@ -15,12 +15,12 @@ NONGIT_OK=No
 readonly ERR_GETOPT=1
 
 main() {
-  if [[ $# -lt 0 ]]; then
-    usage
-    exit 1
-  fi
+    if [[ $# -lt 0 ]]; then
+        usage
+        exit 1
+    fi
 
-  grep -vE -e '^[[:space:]]*#' regexps | git grep -E -f -
+    grep -vE -e '^[[:space:]]*#' regexps | git grep -E -f -
 }
 
 readonly SHORT_OPT_STR='hV'
@@ -30,28 +30,28 @@ eval set -- "$TEMP"
 unset TEMP
 
 while true; do
-  case "$1" in
-    '-h'|'--help')
-      usage
-      exit 0
-      ;;
-    '-V'|'--version')
-      echo "$0 v$VERSION"
-      exit 0
-      ;;
-    '--')
-      shift
-      ;;
-    *)
-      echo "$0 internal error!" >&2
-      exit $ERR_GETOPT
-      ;;
-  esac
+    case "$1" in
+        '-h'|'--help')
+            usage
+            exit 0
+            ;;
+        '-V'|'--version')
+            echo "$0 v$VERSION"
+            exit 0
+            ;;
+        '--')
+            shift
+            ;;
+        *)
+            echo "$0 internal error!" >&2
+            exit $ERR_GETOPT
+            ;;
+    esac
 done
 
 echo 'Remaining arguments:'
 for arg; do
-  echo "--> '$arg'"
+    echo "--> '$arg'"
 done
 
 main "$@"

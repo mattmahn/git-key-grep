@@ -8,7 +8,7 @@ git-key-grep - Search for tracked API keys
 SYNOPSIS
 --------
 [verse]
-'git key-grep' [--version | -V] [--help | -h]
+'git key-grep' [--help | -h] [--version | -V]
 
 DESCRIPTION
 -----------
@@ -21,18 +21,18 @@ OPTIONS
 -------
 -h::
 --help::
-      Prints this man page.
+    Prints this man page.
 
 -V::
 --version::
-      Prints the version number of this git plugin.
+    Prints the version number of this git plugin.
 
 EXIT STATUS
 -----------
 0::
-      Success
+    Success
 1::
-      Error with getopt
+    Error with getopt
 
 BUGS
 ----
