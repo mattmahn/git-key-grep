@@ -14,7 +14,7 @@ install: git-key-grep.1 regexp
 	install -vm 0644 "regexp" "$(PREFIX)"
 
 git-key-grep.1: git-key-grep.1.txt
-	a2x -d manpage -f manpage $<
+	a2x -f manpage -a revnumber='v$(file <VERSION)' $<
 
 man: git-key-grep.1
 

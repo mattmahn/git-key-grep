@@ -1,5 +1,6 @@
 git-key-grep(1)
 ===============
+:man version: {revnumber}
 
 NAME
 ----
@@ -42,7 +43,7 @@ Please submit an issue at https://github.com/mattmahn/git-key-grep/issues.
 
 RESOURCES
 ---------
-Main web site: https://github.com/mattmahn/git-key-grep/issues
+Main web site: https://github.com/mattmahn/git-key-grep
 
 SEE ALSO
 --------
