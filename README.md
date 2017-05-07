@@ -35,6 +35,8 @@ for anything else that needs improvement too.
 
 The [man page][] is written in [AsciiDoc][], so you may need to install the
 `asciidoc` package to get the `a2x` command used to generate the man page.
+Also, be sure to follow the Style Guide in **man-pages**(7) when editing the
+man page.
 
 ### Dev Envrionment
 

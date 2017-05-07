@@ -3,7 +3,7 @@
 # Searches a git repository for API keys.
 
 readonly VERSION=$(cat VERSION)
-USAGE=''
+USAGE='[--help | -h] [--version | -V]'
 SUBDIRECTORY_OK=Yes
 NONGIT_OK=No
 . "$(git --exec-path)/git-sh-setup"   # see git-sh-setup(1)
@@ -12,7 +12,8 @@ readonly ERR_GETOPT=1
 readonly ERR_OPTIONS=2
 
 main() {
-    grep -vE -e '^[[:space:]]*#' regexps | git grep -E -f -
+    local pathspecs="$@"
+    grep -vE -e '^[[:space:]]*#' regexps | git grep -E -f - -- "$pathspecs"
 }
 
 readonly SHORT_OPT_STR='hV'
@@ -31,7 +32,7 @@ while true; do
             exit 0
             ;;
         '-V'|'--version')
-            echo "$0 v$VERSION"
+            echo "git key-grep v$VERSION"
             exit 0
             ;;
         '--')

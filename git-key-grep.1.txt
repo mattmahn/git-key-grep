@@ -8,38 +8,41 @@ git-key-grep - Search for tracked API keys
 
 SYNOPSIS
 --------
-[verse]
-'git key-grep' [--help | -h] [--version | -V]
+*git key-grep* [*--help* | *-h*] [*--version* | *-V*] [_pathspec_...]
 
 DESCRIPTION
 -----------
-Search the git working tree for any thing that looks like it may be an API key
-that was accidentally added to the repository.
+Search the git working tree for any thing that looks like it
+may be an API key that was accidentally added to the repository.
 
 You may want to include this in your pre-commit hook to warn you automatically.
 
 OPTIONS
 -------
--h::
---help::
-    Prints this man page.
+*-h*::
+*--help*::
+    Prints a short usage message.
 
--V::
---version::
-    Prints the version number of this git plugin.
+*-V*::
+*--version*::
+    Prints the version number of this +git+ plugin.
+
+_pathspec_...::
+    If given, limit the search to the paths given. *glob*(7) patterns are
+    supported.
 
 EXIT STATUS
 -----------
 0::
     Success
 1::
-    Error with 'getopt'(1)
+    Error with *getopt*(1)
 2::
     Bad arguments
 
 BUGS
 ----
-Please submit an issue at https://github.com/mattmahn/git-key-grep/issues.
+Please submit an issue at https://github.com/mattmahn/git-key-grep/issues
 
 RESOURCES
 ---------
@@ -47,6 +50,6 @@ Main web site: https://github.com/mattmahn/git-key-grep
 
 SEE ALSO
 --------
-`git-grep`(1)
+*git-grep*(1)
 
 // vim: ft=asciidoc spelllang=en_us spell
