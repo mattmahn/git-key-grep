@@ -1,0 +1,5 @@
+- id: git-key-grep
+  name: "git key grep"
+  entry: git-key-grep
+  files: "\..*$"
+  language: script

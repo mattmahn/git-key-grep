@@ -9,6 +9,17 @@ Inside a git repository, simply run `git key-grep` to find any API keys that
 are in the repository (i.e. in any file that is tracked or staged to be
 tracked).
 
+### pre-commit
+
+git-key-grep is compatible with [pre-commit][] with something like the
+following in your `.pre-commit-config.yaml`:
+```yaml
+- repo: https://github.com/mattmahn/git-key-grep.git
+  sha: HEAD
+  hooks:
+  - id: git-key-grep
+```
+
 
 ## Installation
 
@@ -38,7 +49,7 @@ The [man page][] is written in [AsciiDoc][], so you may need to install the
 Also, be sure to follow the Style Guide in **man-pages**(7) when editing the
 man page.
 
-### Dev Envrionment
+### Dev Environment
 
 A Dockerfile is available to test git-key-grep, so you don't have to mess up
 your own system. Build it with
@@ -53,3 +64,4 @@ docker run -it 'git-key-grep'
 
 [AsciiDoc]: http://asciidoc.org/
 [man page]: git-key-grep.1.txt
+[pre-commit]: http://pre-commit.com
