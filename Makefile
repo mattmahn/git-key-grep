@@ -1,23 +1,36 @@
-MANDIR ?= "/usr/share/man"
-PREFIX ?= "/usr/local/bin"
+MAN_DIR       ?= /usr/shar/man
+MAN1_DIR      := $(MAN_DIR)/man1
+PREFIX        := /usr/local
+BIN_DIR       := $(PREFIX)/bin
+ROOT_DATA_DIR := $(PREFIX)/share
+DATA_DIR      := $(ROOT_DATA_DIR)/git-key-grep
+EXEC_FILES     = git-key-grep
 
 .PHONY: install man uninstall
 
 all: man
 
 clean:
-	rm git-key-grep.1
+	rm git-key-grep.1 git-key-grep.1.gz
 
-install: git-key-grep.1 regexp
-	install -vm 0755 "git-key-grep" "$(PREFIX)"
-	install -vm 0644 "git-key-grep.1" "$(MANDIR)/man1"
-	install -vm 0644 "regexp" "$(PREFIX)"
+install: git-key-grep.1.gz
+	install -d $(BIN_DIR) $(DATA_DIR)
+	install -m 0755 -t $(BIN_DIR) $(EXEC_FILES)
+	install -m 0644 "git-key-grep.1.gz" $(MAN1_DIR)
+	install -m 0644 -t "$(DATA_DIR)" "regexps"
+	@echo
+	@echo -e "\e[0;32m✔ Finished installing to $(BIN_DIR)\e[0m"
+	@echo
 
 git-key-grep.1: git-key-grep.1.txt
-	a2x -f manpage -a revnumber='v$(file <VERSION)' $<
+	a2x -f manpage $<
 
-man: git-key-grep.1
+git-key-grep.1.gz: git-key-grep.1
+	gzip -f $<
+
+man: git-key-grep.1.gz
 
 uninstall:
-	rm -v "$(PREFIX)/git-key-grep" "$(MANDIR)/man1/git-key-grep.1" \
-		"$(PREFIX)/regexp"
+	rm -f $(addprefix $(BIN_DIR)/,$(EXEC_FILES))
+	rm -f "$(BIN_DIR)/git-key-grep" "$(MAN1_DIR)/git-key-grep.1"
+	rm -rf "$(DATA_DIR)"

@@ -1,6 +1,6 @@
 git-key-grep(1)
 ===============
-:man version: {revnumber}
+:man version: 1.0.0
 
 NAME
 ----

@@ -28,14 +28,10 @@ following in your `.pre-commit-config.yaml`:
 ```sh
 git clone https://github.com/mattmahn/git-key-grep.git
 cd git-key-grep
-make
 sudo make install
+cd ..
+rm -rf git-key-grep
 ```
-
-### Windows
-
-1. Download `git-key-grep` and `regexps` into a convenient directory.
-1. Add `git-key-grep` to your `%PATH%`.
 
 
 ## Contributing

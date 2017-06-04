@@ -2,8 +2,8 @@
 #
 # Searches a git repository for API keys.
 
-readonly VERSION=$(cat VERSION)
-USAGE='[--help | -h] [--version | -V]'
+readonly VERSION='1.0.0'
+USAGE='[--help | -h] [--version | -V] [pathspec...]'
 SUBDIRECTORY_OK=Yes
 NONGIT_OK=No
 . "$(git --exec-path)/git-sh-setup"   # see git-sh-setup(1)
@@ -13,6 +13,7 @@ readonly ERR_OPTIONS=2
 
 main() {
     local pathspecs="$@"
+    require_work_tree 'git-key-grep'
     grep -vE -e '^[[:space:]]*#' regexps | git grep -E -f - -- "$pathspecs"
 }
 
@@ -44,11 +45,6 @@ while true; do
             exit $ERR_GETOPT
             ;;
     esac
-done
-
-echo 'Remaining arguments:'
-for arg; do
-    echo "--> '$arg'"
 done
 
 main "$@"
