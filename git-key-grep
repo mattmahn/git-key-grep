@@ -2,7 +2,7 @@
 #
 # Searches a git repository for API keys.
 
-readonly VERSION='1.0.0'
+readonly VERSION='1.0.1'
 USAGE='[--help | -h] [--version | -V] [pathspec...]'
 SUBDIRECTORY_OK=Yes
 NONGIT_OK=No

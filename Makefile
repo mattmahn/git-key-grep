@@ -1,4 +1,4 @@
-MAN_DIR       ?= /usr/shar/man
+MAN_DIR       ?= /usr/share/man
 MAN1_DIR      := $(MAN_DIR)/man1
 PREFIX        := /usr/local
 BIN_DIR       := $(PREFIX)/bin
