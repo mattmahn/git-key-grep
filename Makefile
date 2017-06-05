@@ -26,7 +26,7 @@ git-key-grep.1: git-key-grep.1.txt
 	a2x -f manpage $<
 
 git-key-grep.1.gz: git-key-grep.1
-	gzip -f $<
+	gzip -kf $<
 
 man: git-key-grep.1.gz
 

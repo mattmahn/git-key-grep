@@ -2,19 +2,33 @@
 #
 # Searches a git repository for API keys.
 
-readonly VERSION='1.0.1'
-USAGE='[--help | -h] [--version | -V] [pathspec...]'
+readonly VERSION='1.1.0'
+readonly REGEX_PATH='/usr/local/share/git-key-grep/regexps'
+USAGE='[--help | -h] [--version | -V] [--] [pathspec...]'
 SUBDIRECTORY_OK=Yes
 NONGIT_OK=No
 . "$(git --exec-path)/git-sh-setup"   # see git-sh-setup(1)
 
+# Error statuses
 readonly ERR_GETOPT=1
 readonly ERR_OPTIONS=2
+readonly ERR_FOUND_KEYS=3
 
 main() {
-    local pathspecs="$@"
+    local pathspecs="${@:-.}"
     require_work_tree 'git-key-grep'
-    grep -vE -e '^[[:space:]]*#' regexps | git grep -E -f - -- "$pathspecs"
+
+    grep -vE -e '^[[:space:]]*#' $REGEX_PATH \
+        | git grep -E -f - -- "$pathspecs" \
+        | grep -ve 'git-key-grep-ignore'
+    readonly found_keys=$?
+
+    if [[ $found_keys -eq 0 ]]; then
+        echo -e "\n\e[0;31mUhoh, found possible API keys! See above.\e[0m\n"
+        exit $ERR_FOUND_KEYS
+    else
+        echo -e "\n\e[0;31mNo API keys found!\e[0m\n"
+    fi
 }
 
 readonly SHORT_OPT_STR='hV'
