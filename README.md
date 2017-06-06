@@ -8,7 +8,7 @@ Search your git repo for any mistakenly tracked API keys.
 Inside a git repository, simply run `git key-grep` to find any API keys that
 are in the repository (i.e. in any file that is tracked or staged to be
 tracked). Matched patterns can be ignored by adding `git-key-grep-ignore`
-anywhere on the line.
+anywhere on the line (a comment would be a good place).
 
 ### pre-commit
 

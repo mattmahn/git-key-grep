@@ -6,7 +6,7 @@ ROOT_DATA_DIR := $(PREFIX)/share
 DATA_DIR      := $(ROOT_DATA_DIR)/git-key-grep
 EXEC_FILES     = git-key-grep
 
-.PHONY: install man uninstall
+.PHONY: clean install man uninstall
 
 all: man
 
