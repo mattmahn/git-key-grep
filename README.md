@@ -24,6 +24,10 @@ following in your `.pre-commit-config.yaml`:
 
 ## Installation
 
+Dependencies:
+- Git
+- Make
+
 ### Unix
 
 ```sh
@@ -38,28 +42,8 @@ rm -rf git-key-grep
 
 ## Contributing
 
-If you have any additions or improvements for the regular expressions, I'd
-really appreciate a pull request! Of course, feel free to submit a pull request
-for anything else that needs improvement too.
-
-The [man page][] is written in [AsciiDoc][], so you may need to install the
-`asciidoc` package to get the `a2x` command used to generate the man page.
-Also, be sure to follow the Style Guide in **man-pages**(7) when editing the
-man page.
-
-### Dev Environment
-
-A Dockerfile is available to test git-key-grep, so you don't have to mess up
-your own system. Build it with
-```sh
-docker build -t 'git-key-grep' .
-```
-Then start it with
-```sh
-docker run -it 'git-key-grep'
-```
+Thanks for your interest in contributing. Checkout
+[CONTRIBUTING.md](./CONTRIBUTING.md) to get started.
 
 
-[AsciiDoc]: http://asciidoc.org/
-[man page]: git-key-grep.1.txt
 [pre-commit]: http://pre-commit.com
