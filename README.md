@@ -33,7 +33,6 @@ Dependencies:
 ```sh
 git clone https://github.com/mattmahn/git-key-grep.git
 cd git-key-grep
-make
 sudo make install
 cd ..
 rm -rf git-key-grep
