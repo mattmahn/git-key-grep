@@ -27,7 +27,7 @@ main() {
         echo -e "\n\e[0;31mUhoh, found possible API keys! See above.\e[0m\n"
         exit $ERR_FOUND_KEYS
     else
-        echo -e "\n\e[0;31mNo API keys found!\e[0m\n"
+        echo -e "\n\e[0;32mNo API keys found!\e[0m\n"
     fi
 }
 
