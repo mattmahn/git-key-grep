@@ -39,10 +39,17 @@ rm -rf git-key-grep
 ```
 
 
+## Related Works
+
+If you do find something in a repo you want removed, you can try [BFG
+Repo-Cleaner][bfg].
+
+
 ## Contributing
 
 Thanks for your interest in contributing. Checkout
 [CONTRIBUTING.md](./CONTRIBUTING.md) to get started.
 
 
+[bfg]: https://rtyley.github.io/bfg-repo-cleaner/
 [pre-commit]: http://pre-commit.com
