@@ -21,6 +21,8 @@ AIza
 [0-9a-z]{32}(-us[12])?
 # Mailgun
 key-[0-9a-z]{32}
+# Private keys
+--BEGIN [_[:alnum:]]+ PRIVATE KEY--
 # Twitter
 [0-9a-zA-Z]{18,25}
 [0-9a-zA-Z]{35,44}
