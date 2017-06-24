@@ -11,7 +11,7 @@ EXEC_FILES     = git-key-grep
 all: man
 
 clean:
-	rm git-key-grep.1 git-key-grep.1.gz
+	rm git-key-grep.1.gz
 
 install: git-key-grep.1.gz
 	install -d $(BIN_DIR) $(DATA_DIR)

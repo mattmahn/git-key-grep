@@ -2,7 +2,7 @@
 #
 # Searches a git repository for API keys.
 
-readonly VERSION='1.1.0'
+readonly VERSION='1.2.0'
 readonly REGEX_PATH='/usr/local/share/git-key-grep/regexps'
 USAGE='[--help | -h] [--version | -V] [--] [pathspec...]'
 SUBDIRECTORY_OK=Yes
