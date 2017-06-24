@@ -19,7 +19,7 @@ main() {
     require_work_tree 'git-key-grep'
 
     grep -vE -e '^[[:space:]]*#' $REGEX_PATH \
-        | git grep -E -f - -- "$pathspecs" \
+        | git grep --color=always -E -f - -- "$pathspecs" \
         | grep -ve 'git-key-grep-ignore'
     readonly found_keys=$?
 
