@@ -31,7 +31,11 @@
 git-key-grep \- Search for tracked API keys
 .SH "SYNOPSIS"
 .sp
-\fBgit key\-grep\fR [\fB\-\-help\fR | \fB\-h\fR] [\fB\-\-version\fR | \fB\-V\fR] [\fB\-\-\fR] [\fIpathspec\fR\&...]
+\fBgit key\-grep\fR [\fB\-\-\fR] [\fIpathspec\fR\&...]
+.sp
+\fBgit\-key\-grep\fR \fB\-\-help\fR | \fB\-\-h\fR
+.sp
+\fBgit\-key\-grep\fR \fB\-\-version\fR | \fB\-V\fR
 .SH "DESCRIPTION"
 .sp
 Search the git working tree for any thing that looks like it may be an API key that was accidentally added to the repository\&. Any line that matches a regular expression key pattern can be ignored by adding "git\-key\-grep\-ignore" anywhere on the line\&.

@@ -8,7 +8,11 @@ git-key-grep - Search for tracked API keys
 
 SYNOPSIS
 --------
-*git key-grep* [*--help* | *-h*] [*--version* | *-V*] [*--*] [_pathspec_...]
+*git key-grep* [*--*] [_pathspec_...]
+
+*git-key-grep* *--help* | *--h*
+
+*git-key-grep* *--version* | *-V*
 
 DESCRIPTION
 -----------

@@ -34,3 +34,6 @@ uninstall:
 	rm -f $(addprefix $(BIN_DIR)/,$(EXEC_FILES))
 	rm -f "$(BIN_DIR)/git-key-grep" "$(MAN1_DIR)/git-key-grep.1"
 	rm -rf "$(DATA_DIR)"
+	@echo
+	@echo -e "\e[0;32m✔ Finished uninstalling from $(BIN_DIR)\e[0m"
+	@echo
