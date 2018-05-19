@@ -1,11 +1,11 @@
 # git-key-grep
 
-Search your git repo for any mistakenly tracked API keys.
+Search your Git repo for any mistakenly tracked API keys.
 
 
 ## Usage
 
-Inside a git repository, simply run `git key-grep` to find any API keys that
+Inside a Git repository, simply run `git key-grep` to find any API keys that
 are in the repository (i.e. in any file that is tracked or staged to be
 tracked). Matched patterns can be ignored by adding `git-key-grep-ignore`
 anywhere on the line (a comment would be a good place).
@@ -25,14 +25,16 @@ following in your `.pre-commit-config.yaml`:
 ## Installation
 
 Dependencies:
+- C compiler
 - Git
-- Make
+- Make (only for installation)
 
 ### Unix
 
 ```sh
-git clone https://github.com/mattmahn/git-key-grep.git
+git clone --recurse-submodules https://github.com/mattmahn/git-key-grep.git
 cd git-key-grep
+make
 sudo make install
 cd ..
 rm -rf git-key-grep
